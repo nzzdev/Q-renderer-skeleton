@@ -44,7 +44,7 @@ module.exports = {
 					type: 'critical'
 				}
 			], 
-      // ...
+      // pass the data object to svelte render function to get markup
 			markup: staticTemplate.render(request.payload.item)
 		}
 		return reply(data);

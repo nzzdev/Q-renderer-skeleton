@@ -27,6 +27,7 @@ function elementCount(selector) {
   })
 }
 
+// some basic dom tests with mock data
 describe('Q election votes dom tests', function() {
   it('should pass if sum of values is found', function() {
     return elementCount('div.renderer-sum').then(value => {

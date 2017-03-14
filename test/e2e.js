@@ -17,6 +17,7 @@ server.register(plugins, err => {
 
 });
 
+// some basic API tests
 describe('Q required API', () => {
 
   it('should return 200 for /schema.json', function(done) {
