@@ -41,7 +41,7 @@ describe('Q required API', () => {
   })
 
 });
-/*
+
 const mockData = JSON.parse(JSON.stringify(require('./resources/mock-data.js')));
 
 describe('rendering-info endpoints', () => {
@@ -58,4 +58,4 @@ describe('rendering-info endpoints', () => {
     });
   })
 
-});*/
+});

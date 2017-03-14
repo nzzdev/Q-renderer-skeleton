@@ -1,3 +1,31 @@
 <!-- tiny example to show how svelte templating works -->
-<h3>{{title}}</h3>
-<div></div>
+<Header title='{{title}}' subtitle='{{subtitle}}'/>
+<div class="renderer-sum">Sum of all values: {{sumValues}}</div>
+  {{#each sampleData as sample}}
+  <div class="renderer-data-entry">
+    <div>{{sample.name || ''}}</div>
+    <div>{{sample.status || ''}}</div>
+  </div>
+  {{/each}}
+<Footer source='{{source}}' />
+
+<script>
+  import Header from './Header.html';
+  import Footer from './Footer.html';
+  
+  export default {
+    computed: {
+      sumValues: (sampleData) => {
+        return sampleData
+          .map(sample => sample.value || 0)
+          .reduce((sum, sampleValue) => {
+            return sum + sampleValue;
+          }, 0);
+      }
+    },
+    components: {
+      Header,
+      Footer
+    }
+  };
+</script>

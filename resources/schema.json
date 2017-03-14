@@ -6,7 +6,7 @@
       "title": "Titel",
       "type": "string"
     },
-    "annotations": {
+    "subtitle": {
       "title": "Untertitel",
       "type": "string"
     },
@@ -66,29 +66,25 @@
         }
       }
     },
-    "sources": {
-      "title": "Quellen",
-      "type": "array",
-      "items": {
-        "type": "object",
-        "title": "Quelle",
-        "properties": {
-          "text": {
-            "title": "Text",
-            "type": "string"
-          },
-          "link": {
-            "Q:type": "link",
-            "title": "Link",
-            "type": "object",
-            "properties": {
-              "url": {
-                "title": "Url",
-                "type": "string"
-              },
-              "isValid": {
-                "type": "boolean"
-              }
+    "source": {
+      "title": "Quelle",
+      "type": "object",
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "link": {
+          "Q:type": "link",
+          "title": "Link",
+          "type": "object",
+          "properties": {
+            "url": {
+              "title": "Url",
+              "type": "string"
+            },
+            "isValid": {
+              "type": "boolean"
             }
           }
         }
