@@ -1,0 +1,12 @@
+<div>
+  Data source:
+  {{#if source.text !== ''}}
+    {{#if source.link && source.link.isValid}}
+      <a href="{{source.link.url}}" target="blank" rel="noopener noreferrer">
+        {{source.text}}
+      </a>
+    {{else}}
+    {{source.text}}
+    {{/if}}
+  {{/if}}
+</div>

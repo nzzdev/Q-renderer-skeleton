@@ -1,0 +1,64 @@
+<!-- index.html to test what markup would look like locally (independent of target) -->
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Q Renderer Skeleton</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://service.sophie.nzz.ch/bundle/sophie-q@^1,sophie-font@^1,sophie-color@^1,sophie-viz-color@^1[diverging-6].css">
+    <script src="https://rawgit.com/filamentgroup/loadCSS/master/src/loadCSS.js"></script> 
+  </head>
+  <body>
+    <div id="container">
+      <div id="renderer"></div>
+    </div>
+    <script>
+      let data = {
+        "item": {
+          "title": "Demo Renderer Skeleton",
+          "sampleData": [
+            {
+              "name": "Name 1",
+              "value": 12,
+              "status": "open"
+            },
+            {
+              "name": "Name 2"
+            },
+            {
+              "name": "Name 3",
+              "value": 7
+            }
+          ],
+          "source": {
+            "text": "NZZ Storytelling",
+            "link": {
+              "url": "https://nzz.ch/storytelling",
+              "isValid": true
+            }
+          }
+        }
+      };
+
+      fetch(`http://localhost:3000/rendering-info/html-static?updatedDate=2017-02-09T17:16:49.120Z`, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          data.stylesheets.forEach(stylesheet => {
+            if (stylesheet.name) {
+              stylesheet.url = `http://localhost:3000/stylesheet/${stylesheet.name}`
+            }
+            loadCSS(stylesheet.url)
+          })
+          document.getElementById('renderer').innerHTML = data.markup;
+        })
+    </script>
+  </body>
+</html>

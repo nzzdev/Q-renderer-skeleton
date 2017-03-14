@@ -3,32 +3,89 @@
   "type": "object",
   "properties": {
     "title": {
+      "title": "Titel",
       "type": "string"
     },
-    "annotations": {
+    "subtitle": {
+      "title": "Untertitel",
       "type": "string"
     },
-    "toolSpecificSample": {
-      "type": "object",
-      "properties": {
-        "sampleProperty": {
-          "type": "string"
+    "sampleData": {
+      "title": "Beispiele",
+      "type": "array",
+      "Q:options": {
+        "expandable": {
+          "itemLabelProperty": "name"
+        }
+      },
+      "items": {
+        "type": "object",
+        "title": "Beispiel",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "value": {
+            "title": "Wert",
+            "type": "number",
+            "Q:options": {
+              "step": "0.1"
+            }
+          },
+          "compactObject": {
+            "title": "kompaktes Objekt",
+            "type": "object",
+            "Q:options": {
+              "compact": true
+            },
+            "properties": {
+              "url": {
+                "title": "Url",
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "default": "open",
+            "enum": [
+              "open",
+              "in progress",
+              "done"
+            ],
+            "Q:options": {
+              "enum_titles": [
+                "offen",
+                "in Bearbeitung",
+                "erledigt"
+              ]
+            }
+          }
         }
       }
     },
-    "sources": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "text": {
-            "type": "string"
-          },
-          "href": {
-            "type": "string"
-          },
-          "validHref": {
-            "type": "boolean"
+    "source": {
+      "title": "Quelle",
+      "type": "object",
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "link": {
+          "Q:type": "link",
+          "title": "Link",
+          "type": "object",
+          "properties": {
+            "url": {
+              "title": "Url",
+              "type": "string"
+            },
+            "isValid": {
+              "type": "boolean"
+            }
           }
         }
       }
