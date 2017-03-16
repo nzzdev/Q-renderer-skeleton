@@ -40,8 +40,7 @@ module.exports = {
 				{
           // name of stylesheet will be used to call the correct stylesheet endpoint to load css
           // one can also specify a url instead which will result in loading css directly from that url
-					name: 'default',
-					type: 'critical'
+					name: 'default'
 				}
 			], 
       // pass the data object to svelte render function to get markup
