@@ -1,6 +1,6 @@
 # NZZ Storytelling Q Renderer Service Skeleton
 
-Clone this repo to start with a new Q renderer service skeleton.
+Q tool skeleton to use for creating a new Q tool. Create a new repo, clone or download this skeleton repo, copy it in your new one and change it according to your needs.
 
 ## Docker setup
 Dockerfile already included in skeleton repo. Renderer service can be dockerized locally with:
