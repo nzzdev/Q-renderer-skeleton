@@ -1,6 +1,7 @@
 # NZZ Storytelling Q Renderer Service Skeleton
 
 Q tool skeleton to help you creating a new Q tool. Clone or download this repo, change it according to your needs and push to your own new remote repo.
+See also [Q server documentation - Developing tools](https://nzzdev.github.io/Q-server/developing-tools.html)
 
 ## Docker setup
 Dockerfile already included in skeleton repo. Renderer service can be dockerized locally with:
