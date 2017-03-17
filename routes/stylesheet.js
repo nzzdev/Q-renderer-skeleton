@@ -4,8 +4,8 @@ const Boom = require('boom');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const postcss = require('postcss');
-const autoprefixerPlugin = autoprefixer({ 
-   browsers: ['ie > 9', 'last 3 versions']
+const autoprefixerPlugin = autoprefixer({
+  browsers: ['ie > 9', 'last 3 versions']
 });
 
 const stylesDir = __dirname + '/../styles/'
@@ -29,11 +29,11 @@ module.exports = {
             reply(Boom.badImplementation(err));
           } else {
             postcss([ autoprefixerPlugin ]).process(result.css)
-                .then(result => {
-                  if (result.warnings().length > 0) {
-                    return reply(result).type('text/css');
-                  }
-                  return reply(result.css).type('text/css');
+              .then(result => {
+                if (result.warnings().length > 0) {
+                  return reply(result).type('text/css');
+                }
+                return reply(result.css).type('text/css');
               });
           }
         }
